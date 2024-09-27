@@ -1,0 +1,80 @@
+* {  
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to top, #c4d2db 0%, #d5dee4 100%);
+    /*dark mode background-image: linear-gradient(to top, #2c3e50 0%, #34495e 100%);
+*/
+
+/*maybe for light mode     background: radial-gradient(circle at 67% 60%,rgba(110, 173, 180, 0.34), rgba(182, 220, 224, 0.3), rgba(245, 242, 242, 0.46), rgba(255, 251, 251, 1), rgba(255,255,255,1), rgba(255, 253, 253, 1), rgba(255,255,255,1), rgba(255,255,255,1))    /*dark mode background-image: linear-gradient(to top, #2c3e50 0%, #34495e 100%);
+*/
+}
+
+.chris-img {
+    width:120px;
+    /* height: auto; */
+    border-radius:100%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 10px 40px 4px;
+    margin: 10px 0;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items:left;
+    flex-direction: column;
+    padding: 0 4vw;
+}
+
+.hero-section h1 {
+    font-size: 50px;
+}
+
+.hero-section h3 {
+    font-size: 25px;
+    padding: 0 0 .6em ;
+    font-weight: 600 ;
+    color: #127aba;
+    line-height: 1;
+}
+
+.hero-section p{
+    font-size: 19px;
+    padding: 5px 0 0 ;
+    line-height: 1.23;
+}
+
+.hero-intro, h1 {
+    text-align: left;
+}
+
+
+.hero-btns {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center; /* Vertically center the buttons */
+    gap: 10px; /* Space between the buttons */
+}
+
+.resume-btn, .work-btn {
+    display: inline-flex; /* Keep buttons inline and allow flex properties */
+    padding: 10px 20px;
+    background-color: #127aba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline if buttons are links */
+    font-size: 16px;
+}
+
+.resume-btn:hover, .work-btn:hover {
+    background-color: #0a5f99; /* Darken button on hover */
+}
