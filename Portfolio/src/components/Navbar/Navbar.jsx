@@ -29,7 +29,7 @@ function Navbar() {
         height: 'auto', // Height adjusted to content size
         padding: 2,
         textAlign: 'center',
-        backgroundColor: '#333', // Custom background color
+        background: '#radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);', // Custom background color
         borderRadius: 2, // Rounded corners for pop-up effect
       }}
     >
@@ -61,9 +61,9 @@ function Navbar() {
           <Typography
             variant="p"
             component="div"
-            sx={{color:'black' ,flexGrow: 1, display: 'block' }} // Ensures the text stays on the left
+            sx={{color:'#30234f' ,flexGrow: 1, display: 'block' }} // Ensures the text stays on the left
           >
-            Chris Diaz
+            {/* Chris Diaz */}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (

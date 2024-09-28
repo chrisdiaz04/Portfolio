@@ -1,6 +1,6 @@
 import React from "react";
 import './Portfolio.css'; // Import your CSS file
-import Image from '../../assets/Chriss.jpg'; // Adjust the relative path
+import Image from '../../assets/Chris.jpg'; // Adjust the relative path
 
 function Hero() {
     return (
@@ -15,17 +15,12 @@ function Hero() {
                 <p>I'm a design-minded developer seeking opportunities to begin
  my journey in the tech world! While I specialize in frontend development, I'm eager to expand my skills in backend technologies with the goal of becoming a full-stack developer.</p>     
             </div>
-                <div className="hero-btns">
+                <div>
                     <button className="resume-btn">
                         Resume
                     </button>
                 </div>
-            <div className="hero-btns">
-                <button className="work-btn">
-                    Let's Work
-                </button>
             </div>
-        </div>
     </section>    
     );
 }

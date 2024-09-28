@@ -2,23 +2,22 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: black;
+    color: #64748B
 
 }
 
 body {
     height: 100vh;
-    background-image: linear-gradient(to top, #c4d2db 0%, #d5dee4 100%);
-    /*dark mode background-image: linear-gradient(to top, #2c3e50 0%, #34495e 100%);
-*/
+    /* background-image: linear-gradient(to top, #93c4e2 0%, #d5dee4 100%);
+    background-image: linear-gradient(to top, #07090b 0%, #142332 100%); */
+    background: radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);
+    /* background: radial-gradient(circle at 64% 17%,#dadaff, #e2f8ea, #ffffff) */
+ /* background: radial-gradient(circle at 67% 60%,rgba(110, 173, 180, 0.34), rgba(182, 220, 224, 0.3), rgba(245, 242, 242, 0.46), rgba(255, 251, 251, 1), rgba(255,255,255,1), rgba(255, 253, 253, 1), rgba(255,255,255,1), rgba(255,255,255,1))    /*dark mode background-image: linear-gradient(to top, #2c3e50 0%, #34495e 100%); */
 
-/*maybe for light mode     background: radial-gradient(circle at 67% 60%,rgba(110, 173, 180, 0.34), rgba(182, 220, 224, 0.3), rgba(245, 242, 242, 0.46), rgba(255, 251, 251, 1), rgba(255,255,255,1), rgba(255, 253, 253, 1), rgba(255,255,255,1), rgba(255,255,255,1))    /*dark mode background-image: linear-gradient(to top, #2c3e50 0%, #34495e 100%);
-*/
 }
 
 .chris-img {
     width:120px;
-    /* height: auto; */
     border-radius:100%;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 10px 40px 4px;
     margin: 10px 0;
@@ -35,13 +34,14 @@ body {
 
 .hero-section h1 {
     font-size: 50px;
+    color: #cfe0fa; background-image: -webkit-linear-gradient(45deg, #cfe0fa 0%, #a8bee0 6%, #6f89b0 100%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent; 
 }
 
 .hero-section h3 {
     font-size: 25px;
-    padding: 0 0 .6em ;
+    padding: 0 .1em .6em ;
     font-weight: 600 ;
-    color: #127aba;
+    color: #5facff;
     line-height: 1;
 }
 
@@ -49,6 +49,8 @@ body {
     font-size: 19px;
     padding: 5px 0 0 ;
     line-height: 1.23;
+    color: #a6b2c5;
+
 }
 
 .hero-intro, h1 {
@@ -58,23 +60,46 @@ body {
 
 .hero-btns {
     display: flex;
-    justify-content: flex-start; /* Align buttons to the left */
-    align-items: center; /* Vertically center the buttons */
-    gap: 10px; /* Space between the buttons */
+
 }
 
-.resume-btn, .work-btn {
-    display: inline-flex; /* Keep buttons inline and allow flex properties */
-    padding: 10px 20px;
-    background-color: #127aba;
-    color: white;
+.resume-btn {
+    display: flex; /* Keep buttons inline and allow flex properties */
+    padding: 10px 30px;
+    background-color: #0c0b0b;
+    color: rgb(212, 214, 215);
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     text-decoration: none; /* Remove underline if buttons are links */
     font-size: 16px;
+    margin: 30px 0 0;
+    position: relative; /* Important to allow the pseudo-element to work correctly */
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px; /* Regular shadow */
 }
 
-.resume-btn:hover, .work-btn:hover {
-    background-color: #0a5f99; /* Darken button on hover */
+.resume-btn::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    right: 1px;
+    bottom: 2px;
+    z-index: -1;
+    border-radius: 4px;
+    background: linear-gradient(120deg, 
+                #6192ec, #5379b5, 
+                #7fd3ef, #8ac5e5, 
+                #5495c7, #53a1eb); /* Applying gradient to the pseudo-element */
+    filter: blur(6px); /* Blurring the gradient to create a shadow-like effect */
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+/* Hover state with more defined colors */
+.resume-btn:hover::before {
+    transform: scale(1.1); /* Slightly scale up the gradient to spread it out more */
+    background-color: black;
 }
