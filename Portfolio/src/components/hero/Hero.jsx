@@ -1,5 +1,5 @@
 import React from "react";
-import './Portfolio.css'; // Import your CSS file
+import '../Portfolio.css'; // Import your CSS file
 import Image from '../../assets/Chris.jpg'; // Adjust the relative path
 
 function Hero() {
