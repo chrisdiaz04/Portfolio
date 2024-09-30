@@ -1,4 +1,5 @@
 import React from "react";
+import{Typewriter} from 'react-simple-typewriter'
 import '../Portfolio.css'; // Import your CSS file
 import Image from '../../assets/Chris.jpg'; // Adjust the relative path
 
@@ -11,7 +12,17 @@ function Hero() {
             <h1>Chris Diaz</h1>
 
             <div className="hero-intro">
-                <h3>FrontEnd Developer</h3>
+          <h3 className="typewriter">
+              <Typewriter
+                words={['Frontend Developer']}
+                loop={1} 
+                cursor
+                cursorStyle={<span className="slow-blinking-cursor">|</span>} // Apply custom cursor style
+                typeSpeed={150}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+                </h3>
                 <p>I'm a design-minded developer seeking opportunities to begin
  my journey in the tech world! While I specialize in frontend development, I'm eager to expand my skills in backend technologies with the goal of becoming a full-stack developer.</p>     
             </div>
@@ -27,5 +38,3 @@ function Hero() {
 
 export default Hero;
 
-
-//I'm a design minded developer who is seeking oppurtinities to start in the developer world! My primary expertiese is frontend but would love to work with Backend and aim to become a Fullstack Developer.
