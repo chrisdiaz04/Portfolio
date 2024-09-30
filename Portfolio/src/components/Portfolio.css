@@ -8,11 +8,11 @@
 
 body {
     height: 100vh;
-    /* background-image: linear-gradient(to top, #93c4e2 0%, #d5dee4 100%);
-    background-image: linear-gradient(to top, #07090b 0%, #142332 100%); */
     background: radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);
-    /* background: radial-gradient(circle at 64% 17%,#dadaff, #e2f8ea, #ffffff) */
- /* background: radial-gradient(circle at 67% 60%,rgba(110, 173, 180, 0.34), rgba(182, 220, 224, 0.3), rgba(245, 242, 242, 0.46), rgba(255, 251, 251, 1), rgba(255,255,255,1), rgba(255, 253, 253, 1), rgba(255,255,255,1), rgba(255,255,255,1))    /*dark mode background-image: linear-gradient(to top, #2c3e50 0%, #34495e 100%); */
+    /* background-image: linear-gradient(to top, #07090b 0%, #142332 100%); */
+    /* background: radial-gradient(circle at 64% 17%,#dadaff, #e2f8ea, #ffffff); */
+    background-size: cover;
+    background-attachment: fixed;
 
 }
 
@@ -45,7 +45,7 @@ body {
     line-height: 1;
 }
 
-.hero-section p{
+.hero-section p, .skills-section p{
     font-size: 19px;
     padding: 5px 0 0 ;
     line-height: 1.23;
@@ -55,12 +55,6 @@ body {
 
 .hero-intro, h1 {
     text-align: left;
-}
-
-
-.hero-btns {
-    display: flex;
-
 }
 
 .resume-btn {
@@ -77,6 +71,7 @@ body {
     position: relative; /* Important to allow the pseudo-element to work correctly */
     transition: all 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px; /* Regular shadow */
+    margin: 2em 0 2em;
 }
 
 .resume-btn::before {
@@ -106,11 +101,35 @@ body {
 
 
 /* SKILLS SECTION*/
+.skills-section {
+    padding:0 4vw;
+}
+
 
 .skills-section h1 {
     font-size: 39px;
     color: #cfe0fa; background-image: -webkit-linear-gradient(45deg, #cfe0fa 0%, #a8bee0 6%, #6f89b0 100%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent; 
     display: flex;
-    justify-content: center;
-    padding: 4em 0 0;
+    justify-content: c;
+    padding: 2em 0 .5em;
+    margin:1em 0 0;
+
+}
+
+
+.skills-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+
+}
+.skill-container {
+    list-style-type: none;
+    padding: 20px;
+}
+
+
+.skill {
+    width: 60px;
 }
