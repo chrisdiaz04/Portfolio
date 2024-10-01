@@ -71,7 +71,7 @@ body {
     position: relative; /* Important to allow the pseudo-element to work correctly */
     transition: all 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px; /* Regular shadow */
-    margin: 2em 0 2em;
+    margin: 2em 0 1em;
 }
 
 .resume-btn::before {
@@ -100,18 +100,51 @@ body {
 }
 
 
+
+
+
+
+/*Portfolio Section*/ 
+
+
+.project{
+    display: flex;
+    justify-content: center;
+}
+
+.Algo {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* SKILLS SECTION*/
-.skills-section {
+.skills-section, .Projects-section {
     padding:0 4vw;
 }
 
 
-.skills-section h1 {
+.skills-section h1, .Projects-section h1 {
     font-size: 39px;
     color: #cfe0fa; background-image: -webkit-linear-gradient(45deg, #cfe0fa 0%, #a8bee0 6%, #6f89b0 100%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent; 
     display: flex;
     justify-content: c;
-    padding: 2em 0 .5em;
+    padding: .5em 0;
     margin:1em 0 0;
 
 }
@@ -122,6 +155,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: auto;
+    padding: 20px 0;
 
 }
 .skill-container {
