@@ -3,6 +3,7 @@ import Hero from "./components/hero/Hero"
 import Navbar from "./components/Navbar/Navbar"
 import Projects from "./components/Projects/Projects"
 import Skills from "./components/Skills/Skills"
+import Education from "./components/Education/Education"
 
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
     <>
     <Navbar/>
     <Hero/>
-    <Projects/>
     <Skills />
+    <Projects/>
+    <Education/>
     </>
   )
 }
 
-export default App
+export default App;
