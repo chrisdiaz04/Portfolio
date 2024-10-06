@@ -49,9 +49,11 @@ function Projects() {
                     <img className="Algo" src={Image} alt="Photo of website" />
 
                 </article>
-                    <h2 className="project-card-heading">Algorithm Visualizer</h2>
-                    <p>The Algorithm Visualizer is an interactive tool that demonstrates how various algorithms work step-by-step. It uses real-time visualizations to simplify complex concepts, 
-                    helping users understand sorting, searching, and more through dynamic animations.</p>
+                    <h2 className="project-card-heading">Portfolio</h2>
+                    <p>My portfolio highlights a variety of projects, including websites, applications, and tools like my Algorithm Visualizer, designed to help developers understand algorithms through visual learning. Whether I'm coding the next web app or contributing to a collaborative project, my goal is to deliver polished, efficient, and user-centric solutions.
+                    <br />
+                    <br />
+                    Let’s build something amazing together!</p>
                     <div className="icon-container">
                     <svg
                         className="icons"

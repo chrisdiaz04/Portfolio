@@ -72,7 +72,7 @@ body {
     position: relative; /* Important to allow the pseudo-element to work correctly */
     transition: all 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px; /* Regular shadow */
-    margin: 2em 0 1em;
+    margin: 2em 0 5em;
 }
 
 .resume-btn::before {
@@ -157,7 +157,11 @@ body {
 
 
 /* SKILLS SECTION*/
-.skills-section, .Projects-section, .education-section {
+.skills-section {
+    margin: 5em 0 0;
+}
+
+.skills-section, .Projects-section, .education-section, .footer-section {
     padding:0 4vw;
 }
 
@@ -196,8 +200,47 @@ body {
 
 .education-section h2 {
     color: #cc8efa;
+    padding: 25px 0 0;
 }
 
 .education-section h4 {
     color: #c2c5ca;
+}
+
+.education-section p {
+    padding: 3px 10px;
+    margin: 10px 0;
+}
+
+/*footer */ 
+
+.copyright {
+    margin: 1em 0 0;
+    color: #c2c5ca;
+    text-align: center;
+    font-weight: 100;
+}
+
+.footer-contacts {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contacts {
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: ro;
+    padding:0 10px;
+    margin: 20px;
+}
+
+.footer-section p {
+    text-align: center;
+    color: #c2c5ca;
+    font-size: 13px;
+    padding: 15px 10px ;
+    margin: 10px 0;
+
 }
