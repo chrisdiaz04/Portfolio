@@ -1,9 +1,9 @@
 import React from "react";
+import withScrollAnimation from "../withScrollAnimation";
 
 function Skills() {
     return (
         <section className="skills-section">
-
             <h1>Technologies</h1>
             <div>
             <p>I’m always eager to learn and explore new technologies, frameworks, and programming languages. Currently, I’m diving into PostgreSQL.</p>
@@ -32,16 +32,8 @@ function Skills() {
                     </li>
                 </ul>
             </div>
-            
         </section>
-    )
+    );
 }
 
-
-
-
-
-
-
-
-export default Skills;
+export default withScrollAnimation(Skills);

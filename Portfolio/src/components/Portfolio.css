@@ -29,7 +29,7 @@ body {
     text-align: center;
     align-items:left;
     flex-direction: column;
-    padding: 0 4vw;
+    padding: 0 4vw 19vh;
 }
 
 .hero-section h1 {
@@ -46,7 +46,7 @@ body {
     line-height: 1;
 }
 
-.hero-section p, .skills-section p,.Projects-section p, .education-section p{
+.hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p{
     font-size: 19px;
     padding: 5px 0 0 ;
     line-height: 1.23;
@@ -75,7 +75,7 @@ body {
     margin: 2em 0 5em;
 }
 
-.resume-btn::before {
+.resume-btn::before, .form-button::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -95,7 +95,7 @@ body {
 }
 
 /* Hover state with more defined colors */
-.resume-btn:hover::before {
+.resume-btn:hover::before, .form-button:hover::before {
     transform: scale(1.1); /* Slightly scale up the gradient to spread it out more */
     background-color: black;
 }
@@ -159,14 +159,15 @@ body {
 /* SKILLS SECTION*/
 .skills-section {
     margin: 5em 0 0;
+    
 }
 
-.skills-section, .Projects-section, .education-section, .footer-section {
-    padding:0 4vw;
+.skills-section, .Projects-section, .education-section, .footer-section, .contact-section {
+    padding:0 5vw 5vh;
 }
 
 
-.skills-section h1, .Projects-section h1, .education-section h1 {
+.skills-section h1, .Projects-section h1, .education-section h1, .contact-section h1 {
     font-size: 45px;
     color: #a9c5f0;
     display: flex;
@@ -243,4 +244,79 @@ body {
     padding: 15px 10px ;
     margin: 10px 0;
 
+}
+
+/*Contact section*/
+
+.contact-section  {
+    text-align: center;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    margin: 15px 0;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+form input {
+    padding: 20px 20px;
+    margin: 5px;
+    border-radius: 2px;
+    border: none;
+}
+
+.form-button {
+    width: 50%;
+    align-self: flex-end;
+    background-color: #0c0b0b;
+    color: rgb(212, 214, 215);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline if buttons are links */
+    font-size: 16px;
+    margin: 30px 0 0;
+    position: relative; /* Important to allow the pseudo-element to work correctly */
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.skills-section, .scroll-animation {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+.scroll-animation {
+    opacity: 0;
+    transform: translateX(-100px); /* Slide from the left */
+    filter: blur(2px); /* Apply blur effect */
+    transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out; /* Duration and easing for the animation */
+}
+
+/* State when in view */
+.scroll-animation.fade-in {
+    opacity: 1;
+    transform: translateX(0); /* Slide to the original position */
+    filter: blur(0); /* Remove the blur effect */
 }
