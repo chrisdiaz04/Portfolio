@@ -29,11 +29,11 @@ body {
     text-align: center;
     align-items:left;
     flex-direction: column;
-    padding: 0 4vw 19vh;
+    padding: 0 4vw 17vh;
 }
 
 .hero-section h1 {
-    font-size: 50px;
+    font-size: 60px;
     color: #a9c5f0;
 }
 
@@ -60,7 +60,7 @@ body {
 
 .resume-btn {
     display: flex; /* Keep buttons inline and allow flex properties */
-    padding: 10px 30px;
+    padding: 12px 35px;
     background-color: #0c0b0b;
     color: rgb(212, 214, 215);
     border: none;
@@ -103,6 +103,45 @@ body {
 
 
 
+
+
+.down-arrow {
+    color: #c2c5ca;
+    position: absolute;
+    top: calc(90vh - 70px);
+    left: calc(50% - 14px);
+    width: 0;
+    height: 0px;
+    border-radius: 2px;
+  }
+  
+  .down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+  }
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 20px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+
+  .down-arrow {
+    animation: jumpInfinite 1.5s infinite;
+  }
 
 
 /*Portfolio Section*/ 
@@ -296,12 +335,6 @@ form input {
 
 
 
-
-
-
-
-
-
 .skills-section, .scroll-animation {
     opacity: 1 !important;
     transform: translateY(0);
@@ -311,12 +344,26 @@ form input {
     opacity: 0;
     transform: translateX(-100px); /* Slide from the left */
     filter: blur(2px); /* Apply blur effect */
-    transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out; /* Duration and easing for the animation */
+    transition: transform .7s ease-out, opacity 1s ease-out, filter .3s ease-out; /* Duration and easing for the animation */
 }
 
 /* State when in view */
 .scroll-animation.fade-in {
+    transform: translateX(0);
     opacity: 1;
-    transform: translateX(0); /* Slide to the original position */
+    filter: blur(0); /* Remove the blur effect */
+}
+
+/* Upward Animation for the Footer */
+.scroll-animation-up {
+    opacity: 0;
+    transform: translateY(100px); /* Start below the viewport */
+    filter: blur(2px); /* Apply a blur effect */
+    transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out; /* Smooth transition */
+}
+
+.scroll-animation-up.fade-in {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
     filter: blur(0); /* Remove the blur effect */
 }

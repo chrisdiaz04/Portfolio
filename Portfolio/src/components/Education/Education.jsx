@@ -1,4 +1,5 @@
 import React from "react";
+import withScrollAnimation from "../withScrollAnimation";
 
 function Education() {
     return (
@@ -37,4 +38,4 @@ At Full Stack Academy, I gained comprehensive web development training, focusing
 }
 
 
-export default Education;
+export default withScrollAnimation(Education);

@@ -32,6 +32,11 @@ function Hero() {
                     </button>
                 </div>
             </div>
+
+            <div class="down-arrow"></div>
+
+
+            
     </section>    
     );
 }

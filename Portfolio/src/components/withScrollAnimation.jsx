@@ -5,6 +5,7 @@ function withScrollAnimation(WrappedComponent) {
     return function ScrollAnimationWrapper(props) {
         const elementRef = useRef(null);
         const isInView = useInView(elementRef);
+        
 
         console.log("Component in view:", isInView); // Debugging line
 
