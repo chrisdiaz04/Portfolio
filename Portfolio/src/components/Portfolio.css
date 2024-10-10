@@ -6,6 +6,11 @@
 
 }
 
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     height: 100vh;
     background: radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);
@@ -29,7 +34,7 @@ body {
     text-align: center;
     align-items:left;
     flex-direction: column;
-    padding: 0 4vw 17vh;
+    padding: 0 4vw 20vh;
 }
 
 .hero-section h1 {
@@ -108,7 +113,7 @@ body {
 .down-arrow {
     color: #c2c5ca;
     position: absolute;
-    top: calc(90vh - 70px);
+    top: calc(100vh - 90px);
     left: calc(50% - 14px);
     width: 0;
     height: 0px;
@@ -267,6 +272,13 @@ body {
     justify-content: space-evenly;
 }
 
+.footer-contacts a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .contacts {
     width: 50px;
     display: flex;
@@ -344,7 +356,7 @@ form input {
     opacity: 0;
     transform: translateX(-100px); /* Slide from the left */
     filter: blur(2px); /* Apply blur effect */
-    transition: transform .7s ease-out, opacity 1s ease-out, filter .3s ease-out; /* Duration and easing for the animation */
+    transition: transform .7s ease-out, opacity .5s ease-out, filter .3s ease-out; /* Duration and easing for the animation */
 }
 
 /* State when in view */
@@ -366,4 +378,83 @@ form input {
     opacity: 1;
     transform: translateY(0); /* Move to the original position */
     filter: blur(0); /* Remove the blur effect */
+}
+
+
+
+
+/*Responsive design*/
+
+
+/*Tablet devices*/
+
+@media (min-width: 600px) {
+
+    /*hero section*/
+    body {
+        padding: 0 10px;
+    }
+    .chris-img {
+        width: 170px;
+    }
+    .hero-section h1 {
+        font-size: 65px;
+    }
+    .typewriter {
+        font-size: 30px;
+    }
+    .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p {
+        font-size: 24px;
+    }
+    .resume-btn {
+        padding: 20px 60px;
+        font-size: 18px;
+    }
+
+    /*Skills*/
+
+    .skill {
+        width: 70px;
+    }
+
+    .skills-section h1, .Projects-section h1, .education-section h1, .contact-section h1 {
+        font-size: 65px;
+        margin: 1.5em 0 0;
+    }
+
+
+    /*Project*/
+    .project-card-heading, .education-section h2 {
+        font-size: 2em;
+    }    
+
+    /*Education*/
+    h4 {
+        font-size: 19px;
+    }
+
+    /*Contact*/ 
+    .form-container form {
+        width: 100%;
+    }
+
+    form input {
+        width: 100%;
+        font-size: 20px;
+    }
+    .form-button {
+        padding: 15px;
+    }
+
+    .footer-contacts {
+        width: 100%;
+        
+    }
+
+    .contacts {
+        max-height: 40%;
+        width: 50%;
+    }
+
+
 }

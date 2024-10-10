@@ -12,7 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
-const navItems = ['Skills', 'Education', 'Achievements', 'Projects', 'Contact Me'];
+const navItems = ['Skills', 'Education', 'Projects', 'Contact Me'];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -67,7 +67,7 @@ function Navbar() {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#000' }}> {/* Changed text color for visibility */}
+              <Button key={item} sx={{ color: 'white' }}> {/* Changed text color for visibility */}
                 {item}
               </Button>
             ))}

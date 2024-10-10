@@ -9,7 +9,7 @@ function Education() {
             <h2>Hill College</h2>
             <h4>2022-2024</h4>
             <p>
-            Gained a foundational understanding of web development by learning essential skills in HTML, CSS, JavaScript, and C++. Along with these technical languages, you studied basic algorithms, which helped you develop problem-solving abilities crucial for programming. This education provided you with a solid groundwork to advance further in web development. </p>
+            Gained a foundational understanding of web development by learning essential skills in HTML, CSS, JavaScript, and C++. Along with these technical languages, I studied basic algorithms, which helped me develop problem-solving abilities crucial for programming. This education provided me with a solid groundwork to advance further in web development. </p>
             {/* <h2>Learning outcomes</h2>
             <ul>
                 <li></li>
