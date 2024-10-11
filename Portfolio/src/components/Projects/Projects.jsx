@@ -4,7 +4,7 @@ import withScrollAnimation from "../withScrollAnimation";
 
 function Projects() {
     return (
-        <section className="Projects-section">
+        <section id="Projects" className="Projects-section">
             <h1>Projects</h1>
 
             <div className="card-container">

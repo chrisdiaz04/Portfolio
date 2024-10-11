@@ -35,6 +35,7 @@ body {
     align-items:left;
     flex-direction: column;
     padding: 0 4vw 5vh;
+    margin-top: 80px;
 }
 
 .hero-section h1 {
@@ -390,7 +391,7 @@ form input {
     opacity: 0;
     transform: translateX(-100px); /* Start from the left */
     filter:opacity(0); /* Apply blur effect */
-    transition: transform 2s ease-out, opacity 0.5s ease-out, filter 1s ease-out; /* Animation duration and easing */
+    transition: transform .9s ease-out, opacity 0.5s ease-out, filter 1s ease-out; /* Animation duration and easing */
 }
 
 /* State when the element comes into view */
@@ -530,6 +531,9 @@ form input {
         margin: 0 15px;
     }
   
+    .Projects-section h1 {
+        margin: 3rem 0 0;
+    }
   
 .card-container {
     display: flex;
@@ -610,3 +614,51 @@ form input {
 
 
   
+@media (min-width:1920px) {
+    .chris-img{
+        width: 15rem;
+    }
+
+
+    .skills-section,
+    .Projects-section,
+    .education-section,
+    .footer-section,
+    .contact-section {
+      max-width: 100rem; /* Equivalent to the Tailwind class max-w-5xl */
+      /* padding-top: 3.5rem; Equivalent to the Tailwind class pt-14 */
+      margin: 0 auto; /* Centers the section */
+    }
+
+ .Projects-section h1, .education-section h1, .contact-section h1 {
+    margin: 5rem 0 0 ;
+ }
+
+
+ .scroll-animation {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+    filter:opacity(0); /* Apply blur effect */
+    transition: transform 1s ease-out, opacity 0.8s ease-out, filter 1s ease-out; /* Animation duration and easing */
+}
+
+/* State when the element comes into view */
+.scroll-animation.fade-in {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+    filter: opacity(1); /* Remove blur */
+}
+
+
+
+    .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p {
+        font-size: 24px;
+    }
+
+    .project-card {
+        width: 60rem;
+    }
+    
+
+
+}

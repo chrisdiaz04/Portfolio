@@ -21,23 +21,33 @@ function Navbar() {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleScroll = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
       sx={{
-        width: 150, // Reduced width for the pop-up to make it skinnier
-        height: 'auto', // Height adjusted to content size
+        width: 150,
+        height: 'auto',
         padding: 2,
         textAlign: 'center',
-        background: '#radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);', // Custom background color
-        borderRadius: 2, // Rounded corners for pop-up effect
+        background: '#radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);',
+        borderRadius: 2,
       }}
     >
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} sx={{ color: '#fff' }} /> {/* White text for items */}
+            <ListItemButton
+              sx={{ textAlign: 'center' }}
+              onClick={() => handleScroll(item)} // Handle scroll on button click
+            >
+              <ListItemText primary={item} sx={{ color: '#fff' }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -47,64 +57,73 @@ function Navbar() {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-      <AppBar 
-        component="nav" 
-        position="sticky" // Sticky position for the navbar
-        sx={{ 
-          backgroundColor: 'transparent', // Transparent background
-          boxShadow: 'none', // No box shadow
-          marginBottom: '30px', // Bottom margin
+      <AppBar
+        component="nav"
+        position="fixed" // Keeps the navbar fixed at the top
+        sx={{
+          background: 'rgba(68, 27, 64, .9)', // Semi-transparent base color from your gradient
+          backgroundImage: 'radial-gradient(circle at 62% 27%, rgba(29, 20, 60, 0.8), rgba(20, 39, 63, 4), rgba(0, 0, 10, .8))', // Semi-transparent gradient effect
+          backdropFilter: 'blur(30px)', // Blurry effect
+          boxShadow: 'none',
+          width: '100%', // Makes sure it covers the full width of the screen
+          top: 0, // Ensures it stays at the top of the viewport
+          zIndex: (theme) => theme.zIndex.appBar + 1, // Makes sure it stays above other components
         }}
       >
         <Toolbar>
-          {/* Text on the left side */}
           <Typography
             variant="p"
             component="div"
-            sx={{color:'#30234f' ,flexGrow: 1, display: 'block' }} // Ensures the text stays on the left
+            sx={{ color: '#fff', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             {/* Chris Diaz */}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: 'white' }}> {/* Changed text color for visibility */}
+              <Button
+                key={item}
+                sx={{ color: 'white' }}
+                onClick={() => handleScroll(item)} // Handle scroll on button click
+              >
                 {item}
               </Button>
             ))}
           </Box>
-          {/* Hamburger Icon moved to the right */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            edge="end" // Move to the right side
+            edge="end"
             onClick={handleDrawerToggle}
-            sx={{color:'black', display: { xs: 'block', sm: 'none' }, marginLeft: 'auto' }} // `marginLeft: 'auto'` pushes it to the right
+            sx={{
+              color: 'white',
+              display: { xs: 'block', sm: 'none' },
+              marginLeft: 'auto',
+            }}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      {/* Drawer for mobile navigation */}
       <Drawer
-        anchor="right" // Drawer slides in from the right side
+        anchor="right"
         variant="temporary"
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
+          keepMounted: true,
         }}
         sx={{
           display: { xs: 'block', sm: 'none' },
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
-            width: '160px', // Reduced width for skinnier pop-up
+            width: '160px',
             padding: '1px',
-            height: 'auto', // Adjust height to be content-based
-            top: '10%', // Position the pop-up lower on the screen
-            right: '5%', // Align it slightly away from the edge
-            borderRadius: '8px', // Round the corners
-            backgroundColor: '#333', // Dark background for pop-up effect
+            height: 'auto',
+            top: '10%',
+            right: '5%',
+            borderRadius: '8px',
+            backgroundImage: 'linear-gradient(to top, #07090b 0%, #142332 100%)', // Gradient background
           },
         }}
       >
@@ -113,6 +132,5 @@ function Navbar() {
     </Box>
   );
 }
-
 
 export default Navbar;

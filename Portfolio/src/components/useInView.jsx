@@ -8,7 +8,7 @@ function useInView(ref) {
     if (!ref.current) return;
 
     // Determine the threshold based on the screen size
-    const thresholdValue = window.innerWidth < 900 ? 0.11 : 0.3;
+    const thresholdValue = window.innerWidth < 900 ? 0.11 : 0.5;
 
     const observer = new IntersectionObserver(
       (entries) => {

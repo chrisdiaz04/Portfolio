@@ -3,7 +3,7 @@ import withScrollAnimation from "../withScrollAnimation";
 
 function Skills() {
     return (
-        <section className="skills-section">
+        <section id="Skills" className="skills-section">
             <h1>Technologies</h1>
             <div>
                 <p>I'm excited to dive into new technologies, frameworks, and programming languages. Right now, I’m focused on learning PostgreSQL to boost my database skills and build scalable apps. I believe staying current with industry trends is key to becoming a well-rounded developer.</p>

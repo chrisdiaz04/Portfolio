@@ -5,7 +5,7 @@ function Education() {
     return (
         <section className="education-section">
             <h1>Education</h1>
-        <div className="education-content">
+        <div id="Education" className="education-content">
             <h2>Hill College</h2>
             <h4>2022-2024</h4>
             <p>
