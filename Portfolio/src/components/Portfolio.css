@@ -1,0 +1,664 @@
+* {  
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* color: #64748B */
+
+}
+
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);
+    /* background-image: linear-gradient(to top, #07090b 0%, #142332 100%); */
+    /* background: radial-gradient(circle at 64% 17%,#dadaff, #e2f8ea, #ffffff); */
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.chris-img {
+    width:120px;
+    border-radius:100%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 10px 40px 4px;
+    margin: 10px 0;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items:left;
+    flex-direction: column;
+    padding: 0 4vw 5vh;
+    margin-top: 80px;
+}
+
+.hero-section h1 {
+    font-size: 60px;
+    color: #a9c5f0;
+}
+
+
+.typewriter {
+    font-size: 25px;
+    padding: 0 .1em .6em ;
+    font-weight: 600 ;
+    color: #cc8efa;
+    line-height: 1;
+}
+
+.hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p{
+    font-size: 19px;
+    padding: 5px 0 0 ;
+    line-height: 1.22;
+    color: #c2c5ca;
+
+}
+
+.hero-intro, h1 {
+    text-align: left;
+}
+
+.resume-btn {
+    display: flex; /* Keep buttons inline and allow flex properties */
+    padding: 12px 35px;
+    background-color: #0c0b0b;
+    color: rgb(212, 214, 215);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline if buttons are links */
+    font-size: 16px;
+    margin: 30px 0 0;
+    position: relative; /* Important to allow the pseudo-element to work correctly */
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px; /* Regular shadow */
+    margin: 2em 0 5em;
+}
+
+.resume-btn::before, .form-button::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    right: 1px;
+    bottom: 2px;
+    z-index: -1;
+    border-radius: 4px;
+    background: linear-gradient(120deg, 
+                #6192ec, #5379b5, 
+                #7fd3ef, #8ac5e5, 
+                #5495c7, #53a1eb); /* Applying gradient to the pseudo-element */
+    filter: blur(6px); /* Blurring the gradient to create a shadow-like effect */
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+/* Hover state with more defined colors */
+.resume-btn:hover::before, .form-button:hover::before {
+    transform: scale(1.1); /* Slightly scale up the gradient to spread it out more */
+    background-color: black;
+}
+
+
+
+
+
+
+.down-arrow {
+    color: #c2c5ca;
+    position: absolute;
+    top: calc(100vh - 90px);
+    left: calc(50% - 14px);
+    width: 0;
+    height: 0px;
+    border-radius: 2px;
+  }
+  
+  .down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+  }
+  @keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 20px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+
+  .down-arrow {
+    animation: jumpInfinite 1.5s infinite;
+  }
+
+
+
+
+  .gap {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    height: 6rem;
+  }
+
+/*Portfolio Section*/ 
+.project-card {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin:0 0 1rem;
+    padding: 15px 10px 5px;
+    border: rgb(106, 108, 117) solid 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.project{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.Algo {
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+.project-card-heading {
+    margin:10px 0 0 ;
+    color: #cc8efa;
+}
+
+.Projects-section p{
+    font-size: 16px;
+    padding:10px 0;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: end;
+}
+
+.icons {
+    width: 10%;
+    aspect-ratio: 3/2;
+} 
+
+
+
+
+
+/* SKILLS SECTION*/
+.skills-section {
+    margin: 5em 0 0;
+    
+}
+
+.skills-section, .Projects-section, .education-section, .footer-section, .contact-section {
+    padding:0 5vw 2vh;
+}
+
+
+.skills-section h1, .Projects-section h1, .education-section h1, .contact-section h1 {
+    font-size: 45px;
+    color: #a9c5f0;
+    display: flex;
+    justify-content: center;
+    padding: .5em 0;
+    margin:.5em 0 0;
+
+}
+
+
+.skills-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto;
+    padding: 20px 0;
+
+}
+.skill-container {
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; /* Important to allow the pseudo-element to work correctly */
+    transition: all 0.3s ease-in-out;
+    max-width: 30rem;
+    margin: 5px 0;
+    
+}
+
+
+.skill {
+    width: 40px;
+    margin: 0 10px;
+}
+
+
+/*education*/
+
+.education-section h2 {
+    color: #cc8efa;
+    padding: 25px 0 0;
+}
+
+.education-section h4 {
+    color: #c2c5ca;
+}
+
+.education-section p {
+    padding: 3px 10px;
+    margin: 10px 0;
+}
+
+/*footer */ 
+
+.copyright {
+    margin: 1em 0 0;
+    color: #c2c5ca;
+    text-align: center;
+    font-weight: 100;
+}
+
+.footer-contacts {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-contacts a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contacts {
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: ro;
+    padding:0 10px;
+    margin: 20px;
+}
+
+.footer-section p {
+    text-align: center;
+    color: #c2c5ca;
+    font-size: 13px;
+    padding: 15px 10px ;
+    margin: 10px 0;
+
+}
+
+/*Contact section*/
+
+.contact-section  {
+    text-align: center;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    margin: 15px 0;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+form input {
+    padding: 20px 20px;
+    margin: 5px;
+    border-radius: 2px;
+    border: none;
+}
+
+.form-button {
+    width: 50%;
+    align-self: flex-end;
+    background-color: #0c0b0b;
+    color: rgb(212, 214, 215);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline if buttons are links */
+    font-size: 16px;
+    margin: 30px 0 0;
+    position: relative; /* Important to allow the pseudo-element to work correctly */
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px;
+}
+
+
+
+
+
+
+.skills-section, .scroll-animation {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+/* Initial state for elements to animate */
+/* Initial state for the upward scroll animation */
+.scroll-animation-up {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(100px); /* Start from below the viewport */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition for upward movement */
+}
+
+/* State when the element comes into view */
+.scroll-animation-up.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+
+/* Upward Animation for the Footer */
+.scroll-animation {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+    filter:opacity(0); /* Apply blur effect */
+    transition: transform .9s ease-out, opacity 0.5s ease-out, filter 1s ease-out; /* Animation duration and easing */
+}
+
+/* State when the element comes into view */
+.scroll-animation.fade-in {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+    filter: opacity(1); /* Remove blur */
+}
+
+
+
+/*Responsive design*/
+
+
+/*Tablet devices*/
+
+@media (min-width: 600px) {
+
+    /*hero section*/
+    body {
+        padding: 0 10px;
+    }
+    .chris-img {
+        width: 170px;
+    }
+    .hero-section h1 {
+        font-size: 65px;
+    }
+    .typewriter {
+        font-size: 30px;
+    }
+    .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p {
+        font-size: 20px;
+    }
+    .resume-btn {
+        padding: 20px 60px;
+        font-size: 18px;
+    }
+
+    .down-arrow {
+        display: none;
+    }
+    
+    
+
+    /*Skills*/
+
+    .skill {
+        width: 70px;
+    }
+
+    .skills-section h1, .Projects-section h1, .education-section h1, .contact-section h1 {
+        font-size: 65px;
+        margin: 1.5em 0 0;
+    }
+
+    .skills-section {
+        padding: 2vh 5vw;
+    }
+
+
+    /*Project*/
+
+    .project-card-heading, .education-section h2 {
+        font-size: 2em;
+    }    
+
+    
+
+    /*Education*/
+    h4 {
+        font-size: 19px;
+    }
+
+
+
+    /*Contact*/ 
+    .form-container form {
+        width: 100%;
+        max-width: 50rem;
+    }
+
+    form input {
+        width: 100%;
+        font-size: 20px;
+    }
+    .form-button {
+        padding: 15px;
+        max-width: 10rem;
+    }
+
+    .footer-contacts {
+        width: 100%;
+        
+    }
+
+    .contacts {
+        max-height: 40%;
+        width: 50%;
+    }
+
+}
+
+
+
+@media (min-width: 900px) {
+    .skills-section,
+    .Projects-section,
+    .education-section,
+    .footer-section,
+    .contact-section {
+      max-width: 70rem; /* Equivalent to the Tailwind class max-w-5xl */
+      /* padding-top: 3.5rem; Equivalent to the Tailwind class pt-14 */
+      margin: 0 auto; /* Centers the section */
+    }
+
+    .skills-section h1, .Projects-section h1, .education-section h1, .contact-section h1  {
+        margin: .3em 0 0;
+    }
+
+
+    .hero-section {
+        max-width: 65rem;
+        padding:0 0 0;
+        margin: 0 auto;
+        height: 83vh;
+    }
+
+    .resume-btn {
+        margin:2rem 0 6em
+    
+    }
+    
+
+    .skill {
+        width: 5rem;
+        margin: 0 15px;
+    }
+  
+    .Projects-section h1 {
+        margin: 3rem 0 0;
+    }
+  
+.card-container {
+    display: flex;
+    flex-direction: row;
+    max-height: 50rem;
+}
+
+.project-card {
+    margin: 0 20px ;
+    /* border: rgb(212, 214, 215) solid .5px; */
+    border: none;
+    /* padding: 20px; */
+}
+
+.contacts {
+    width: 100px; /* Increase the width to make the SVG larger */
+    height: 100px; /* Increase the height to make the SVG larger */
+    display: block; /* Ensure it scales properly as a block element */
+    padding: 0; /* Remove any padding */
+    margin: 0 auto; /* Center the SVG */
+}
+
+.down-arrow {
+    display: block;
+    color: #c2c5ca;
+    position: absolute;
+    top: calc(100vh - 90px);
+    left: calc(50% - 14px);
+    width: 0;
+    height: 0px;
+    border-radius: 2px;
+    animation: jumpInfinite 1.5s infinite; /* Apply the animation */
+}
+
+.down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+}
+
+.skills-section {
+    max-width: 70rem; /* Adjusted layout for larger screens */
+    padding-top: 3.5rem;
+    margin: 0 auto;
+}
+
+/* Ensure that .scroll-animation still works on larger screens */
+/* Initial state for elements to animate */
+.scroll-animation {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+    filter:opacity(0); /* Apply blur effect */
+    transition: transform .6s ease-out, opacity 0.5s ease-out, filter 1s ease-out; /* Animation duration and easing */
+}
+
+/* State when the element comes into view */
+.scroll-animation.fade-in {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+    filter: opacity(1); /* Remove blur */
+}
+
+.gap {
+    display: none;
+}
+
+
+}
+
+
+
+
+  
+@media (min-width:1920px) {
+    .chris-img{
+        width: 15rem;
+    }
+
+
+    .skills-section,
+    .Projects-section,
+    .education-section,
+    .footer-section,
+    .contact-section {
+      max-width: 100rem; /* Equivalent to the Tailwind class max-w-5xl */
+      /* padding-top: 3.5rem; Equivalent to the Tailwind class pt-14 */
+      margin: 0 auto; /* Centers the section */
+    }
+
+ .Projects-section h1, .education-section h1, .contact-section h1 {
+    margin: 5rem 0 0 ;
+ }
+
+
+ .scroll-animation {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+    filter:opacity(0); /* Apply blur effect */
+    transition: transform 1s ease-out, opacity 0.8s ease-out, filter 1s ease-out; /* Animation duration and easing */
+}
+
+/* State when the element comes into view */
+.scroll-animation.fade-in {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+    filter: opacity(1); /* Remove blur */
+}
+
+
+
+    .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p {
+        font-size: 24px;
+    }
+
+    .project-card {
+        width: 60rem;
+    }
+    
+
+
+}
