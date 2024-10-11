@@ -1,29 +1,32 @@
-import { useState, useEffect } from "react";
+// useInView.jsx
+import { useEffect, useState } from 'react';
 
 function useInView(ref) {
-    const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                console.log('Is in view:', entry.isIntersecting); // Debugging line
-                setIsInView(entry.isIntersecting);
-            },
-            { threshold: 0.1 }
-        );
+  useEffect(() => {
+    if (!ref.current) return;
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
+    // Determine the threshold based on the screen size
+    const thresholdValue = window.innerWidth < 900 ? 0.11 : 0.3;
 
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, [ref]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInView(entry.isIntersecting);
+        });
+      },
+      { threshold: thresholdValue }
+    );
 
-    return isInView;
+    observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [ref]);
+
+  return isInView;
 }
 
 export default useInView;

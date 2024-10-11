@@ -49,7 +49,7 @@ function Footer() {
             </a>
                 </div>
                 <h4 className="copyright">Copyright &#169; 2024 Christopher Diaz</h4>
-                <p>Built from scratch using Vite and CSS. This site is hosted on Netlify and is still undergoing changes as of 10/10/24</p>
+                <p>Built from scratch using Vite and CSS. This site is hosted on Netlify and is still undergoing changes as of 10/12/24</p>
             </div>
         </section>
     );

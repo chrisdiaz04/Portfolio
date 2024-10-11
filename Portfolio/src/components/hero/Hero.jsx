@@ -46,17 +46,16 @@ function Hero() {
                     <h3 className="typewriter">
                         <Typewriter
                             words={['Frontend Developer']}
-                            loop={1}
+                            loop={2}
                             cursor
                             cursorStyle={<span className="slow-blinking-cursor">|</span>}
                             typeSpeed={150}
                             deleteSpeed={50}
-                            delaySpeed={2000}
+                            delaySpeed={5000}
                         />
                     </h3>
                     <p>
-                        I'm a design-minded developer seeking opportunities to begin my journey in the tech world! While I specialize in frontend development, I'm eager to expand my skills in backend technologies with the goal of becoming a full-stack developer.
-                    </p>
+                    I'm a design-minded developer excited to start my journey in the tech world! I love working on the frontend, creating things that look good and feel right for users. I’m also eager to dive into backend development to round out my skills and grow into a full-stack developer. I’m all about learning new things and taking on challenges, so I can build even better projects from start to finish.                    </p>
                 </div>
 
                 <div>

@@ -6,7 +6,7 @@ import Skills from "./components/Skills/Skills"
 import Education from "./components/Education/Education"
 import Footer from "./components/Footer/footer"
 import Contact from "./components/Contact/Contact"
-
+import Gap from "./components/gap/gap"
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
     <>
     <Navbar/>
     <Hero/>
+    <Gap/>
     <Skills />
     <Projects/>
     <Education/>

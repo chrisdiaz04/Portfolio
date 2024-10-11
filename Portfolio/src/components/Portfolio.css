@@ -34,7 +34,7 @@ body {
     text-align: center;
     align-items:left;
     flex-direction: column;
-    padding: 0 4vw 20vh;
+    padding: 0 4vw 5vh;
 }
 
 .hero-section h1 {
@@ -54,7 +54,7 @@ body {
 .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p{
     font-size: 19px;
     padding: 5px 0 0 ;
-    line-height: 1.23;
+    line-height: 1.22;
     color: #c2c5ca;
 
 }
@@ -149,13 +149,22 @@ body {
   }
 
 
+
+
+  .gap {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    height: 6rem;
+  }
+
 /*Portfolio Section*/ 
 .project-card {
     background-color: transparent;
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin: 15px 0 25px;
+    margin:0 0 1rem;
     padding: 15px 10px 5px;
     border: rgb(106, 108, 117) solid 1px;
     display: flex;
@@ -207,7 +216,7 @@ body {
 }
 
 .skills-section, .Projects-section, .education-section, .footer-section, .contact-section {
-    padding:0 5vw 5vh;
+    padding:0 5vw 2vh;
 }
 
 
@@ -217,7 +226,7 @@ body {
     display: flex;
     justify-content: center;
     padding: .5em 0;
-    margin:1em 0 0;
+    margin:.5em 0 0;
 
 }
 
@@ -225,19 +234,28 @@ body {
 .skills-set {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: auto;
     padding: 20px 0;
 
 }
 .skill-container {
     list-style-type: none;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; /* Important to allow the pseudo-element to work correctly */
+    transition: all 0.3s ease-in-out;
+    max-width: 30rem;
+    margin: 5px 0;
+    
 }
 
 
 .skill {
-    width: 60px;
+    width: 40px;
+    margin: 0 10px;
 }
 
 
@@ -352,34 +370,35 @@ form input {
     transform: translateY(0);
 }
 
-.scroll-animation {
-    opacity: 0;
-    transform: translateX(-100px); /* Slide from the left */
-    filter: blur(2px); /* Apply blur effect */
-    transition: transform .7s ease-out, opacity .5s ease-out, filter .3s ease-out; /* Duration and easing for the animation */
+/* Initial state for elements to animate */
+/* Initial state for the upward scroll animation */
+.scroll-animation-up {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(100px); /* Start from below the viewport */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition for upward movement */
 }
 
-/* State when in view */
-.scroll-animation.fade-in {
-    transform: translateX(0);
-    opacity: 1;
-    filter: blur(0); /* Remove the blur effect */
+/* State when the element comes into view */
+.scroll-animation-up.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
+
 
 /* Upward Animation for the Footer */
-.scroll-animation-up {
+.scroll-animation {
     opacity: 0;
-    transform: translateY(100px); /* Start below the viewport */
-    filter: blur(2px); /* Apply a blur effect */
-    transition: transform 1s ease-out, opacity 1s ease-out, filter 1s ease-out; /* Smooth transition */
+    transform: translateX(-100px); /* Start from the left */
+    filter:opacity(0); /* Apply blur effect */
+    transition: transform 2s ease-out, opacity 0.5s ease-out, filter 1s ease-out; /* Animation duration and easing */
 }
 
-.scroll-animation-up.fade-in {
-    opacity: 1;
-    transform: translateY(0); /* Move to the original position */
-    filter: blur(0); /* Remove the blur effect */
+/* State when the element comes into view */
+.scroll-animation.fade-in {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+    filter: opacity(1); /* Remove blur */
 }
-
 
 
 
@@ -404,12 +423,18 @@ form input {
         font-size: 30px;
     }
     .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p {
-        font-size: 24px;
+        font-size: 20px;
     }
     .resume-btn {
         padding: 20px 60px;
         font-size: 18px;
     }
+
+    .down-arrow {
+        display: none;
+    }
+    
+    
 
     /*Skills*/
 
@@ -422,20 +447,30 @@ form input {
         margin: 1.5em 0 0;
     }
 
+    .skills-section {
+        padding: 2vh 5vw;
+    }
+
 
     /*Project*/
+
     .project-card-heading, .education-section h2 {
         font-size: 2em;
     }    
+
+    
 
     /*Education*/
     h4 {
         font-size: 19px;
     }
 
+
+
     /*Contact*/ 
     .form-container form {
         width: 100%;
+        max-width: 50rem;
     }
 
     form input {
@@ -444,6 +479,7 @@ form input {
     }
     .form-button {
         padding: 15px;
+        max-width: 10rem;
     }
 
     .footer-contacts {
@@ -456,5 +492,121 @@ form input {
         width: 50%;
     }
 
+}
+
+
+
+@media (min-width: 900px) {
+    .skills-section,
+    .Projects-section,
+    .education-section,
+    .footer-section,
+    .contact-section {
+      max-width: 70rem; /* Equivalent to the Tailwind class max-w-5xl */
+      /* padding-top: 3.5rem; Equivalent to the Tailwind class pt-14 */
+      margin: 0 auto; /* Centers the section */
+    }
+
+    .skills-section h1, .Projects-section h1, .education-section h1, .contact-section h1  {
+        margin: .3em 0 0;
+    }
+
+
+    .hero-section {
+        max-width: 65rem;
+        padding:0 0 0;
+        margin: 0 auto;
+        height: 83vh;
+    }
+
+    .resume-btn {
+        margin:2rem 0 6em
+    
+    }
+    
+
+    .skill {
+        width: 5rem;
+        margin: 0 15px;
+    }
+  
+  
+.card-container {
+    display: flex;
+    flex-direction: row;
+    max-height: 50rem;
+}
+
+.project-card {
+    margin: 0 20px ;
+    /* border: rgb(212, 214, 215) solid .5px; */
+    border: none;
+    /* padding: 20px; */
+}
+
+.contacts {
+    width: 100px; /* Increase the width to make the SVG larger */
+    height: 100px; /* Increase the height to make the SVG larger */
+    display: block; /* Ensure it scales properly as a block element */
+    padding: 0; /* Remove any padding */
+    margin: 0 auto; /* Center the SVG */
+}
+
+.down-arrow {
+    display: block;
+    color: #c2c5ca;
+    position: absolute;
+    top: calc(100vh - 90px);
+    left: calc(50% - 14px);
+    width: 0;
+    height: 0px;
+    border-radius: 2px;
+    animation: jumpInfinite 1.5s infinite; /* Apply the animation */
+}
+
+.down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+}
+
+.skills-section {
+    max-width: 70rem; /* Adjusted layout for larger screens */
+    padding-top: 3.5rem;
+    margin: 0 auto;
+}
+
+/* Ensure that .scroll-animation still works on larger screens */
+/* Initial state for elements to animate */
+.scroll-animation {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+    filter:opacity(0); /* Apply blur effect */
+    transition: transform .6s ease-out, opacity 0.5s ease-out, filter 1s ease-out; /* Animation duration and easing */
+}
+
+/* State when the element comes into view */
+.scroll-animation.fade-in {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1; /* Fully visible */
+    filter: opacity(1); /* Remove blur */
+}
+
+.gap {
+    display: none;
+}
+
 
 }
+
+
+
+
+  

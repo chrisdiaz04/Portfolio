@@ -7,6 +7,7 @@ function Projects() {
         <section className="Projects-section">
             <h1>Projects</h1>
 
+            <div className="card-container">
             <div className="project-card">
                 <article className="project">
                     <img className="Algo" src={Image} alt="Photo of website" />
@@ -67,6 +68,7 @@ function Projects() {
                         />
                     </svg>
                 </div>
+            </div>
             </div>
         </section>
     );
