@@ -36,6 +36,7 @@ body {
     flex-direction: column;
     padding: 0 4vw 5vh;
     margin-top: 80px;
+    
 }
 
 .hero-section h1 {
@@ -52,12 +53,19 @@ body {
     line-height: 1;
 }
 
+.slow-blinking-cursor {
+    color: white;
+}
+
 .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p{
     font-size: 19px;
     padding: 5px 0 0 ;
     line-height: 1.22;
     color: #c2c5ca;
+}
 
+.hero-section p {
+    width: 100%;
 }
 
 .hero-intro, h1 {
@@ -105,59 +113,29 @@ body {
     transform: scale(1.1); /* Slightly scale up the gradient to spread it out more */
     background-color: black;
 }
-
-
-
-
-
-
-.down-arrow {
-    color: #c2c5ca;
-    position: absolute;
-    top: calc(100vh - 90px);
-    left: calc(50% - 14px);
-    width: 0;
-    height: 0px;
-    border-radius: 2px;
-  }
-  
-  .down-arrow:after {
-    content: " ";
-    position: absolute;
-    top: 12px;
-    left: -10px;
-    width: 16px;
-    height: 16px;
-    border-bottom: 4px solid;
-    border-right: 4px solid;
-    border-radius: 4px;
-    transform: rotateZ(45deg);
-  }
-  @keyframes jumpInfinite {
-    0% {
-      margin-top: 0;
-    }
-    50% {
-      margin-top: 20px;
-    }
-    100% {
-      margin-top: 0;
-    }
-  }
-
-  .down-arrow {
-    animation: jumpInfinite 1.5s infinite;
-  }
-
-
-
-
   .gap {
     display: flex;
     gap: 40px;
     width: 100%;
     height: 6rem;
   }
+
+  .social-icons {
+    position:relative;
+    top: 45rem; /* Center vertically */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+}
+.hero-container .contacts {
+    width: 50px; /* Adjust this value to your preferred size */
+    height: 80px; /* Adjust this value to match the width */
+    fill: #ffffff; /* Ensure the icon color remains white */
+    transition: transform 0.3s ease; /* Add a smooth hover effect */
+    margin:5px;
+ }
+
+
 
 /*Portfolio Section*/ 
 .project-card {
@@ -179,6 +157,14 @@ body {
     justify-content: center;
     
 }
+
+.project-img {
+    width: 100%; /* Ensures the image takes up the full width of the parent container */
+    height: 300px; /* Set a fixed height for both images */
+    object-fit: cover; /* Ensures the image covers the space without stretching */
+    border-radius: 5px;
+}
+
 
 .Algo {
     width: 100%;
@@ -423,6 +409,11 @@ form input {
     .typewriter {
         font-size: 30px;
     }
+
+    .hero-section p {
+        width: 80%;
+    }
+
     .hero-section p, .skills-section p,.Projects-section p, .education-section p, .contact-section p {
         font-size: 20px;
     }
@@ -431,9 +422,24 @@ form input {
         font-size: 18px;
     }
 
-    .down-arrow {
-        display: none;
+
+    .social-icons {
+        position:relative;
+        top: 47rem; /* Center vertically */
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: row;
+        padding-left: 20px; /* Adjust padding to move icons from the edge */
+        gap: 2%;
     }
+     .hero-container .contacts {
+        width: 50px; /* Adjust this value to your preferred size */
+        height: 80px; /* Adjust this value to match the width */
+        fill: #ffffff; /* Ensure the icon color remains white */
+        transition: transform 0.3s ease; /* Add a smooth hover effect */
+        margin: 0;
+    }
+    
     
     
 
@@ -512,18 +518,45 @@ form input {
         margin: .3em 0 0;
     }
 
+    .hero-container {
+        display: flex;
+        margin: 8rem;
+    }
 
     .hero-section {
         max-width: 65rem;
         padding:0 0 0;
         margin: 0 auto;
-        height: 83vh;
+        height: 60vh;
     }
+
+    .hero-section p {
+        width: 70%;
+    }
+
 
     .resume-btn {
         margin:2rem 0 6em
     
     }
+
+    .social-icons {
+        position:relative;
+        left: 95%;
+        top: 35rem; /* Center vertically */
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0px; /* Add space between the icons */
+        padding-left: 20px; /* Adjust padding to move icons from the edge */
+    }
+     .hero-container .contacts {
+        width: 50px; /* Adjust this value to your preferred size */
+        height: 80px; /* Adjust this value to match the width */
+        fill: #ffffff; /* Ensure the icon color remains white */
+        transition: transform 0.3s ease; /* Add a smooth hover effect */
+    }
+
     
 
     .skill {
@@ -619,7 +652,11 @@ form input {
         width: 15rem;
     }
 
+    .hero-section {
+        padding:0 10rem;
+    }
 
+    .hero-section,
     .skills-section,
     .Projects-section,
     .education-section,
@@ -658,6 +695,56 @@ form input {
     .project-card {
         width: 60rem;
     }
+
+    .hero-container {
+        display: flex;
+        position: relative;
+    }
+    
+    .social-icons {
+        position:absolute;
+        left: 85%;
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Add space between the icons */
+        padding-left: 20px; /* Adjust padding to move icons from the edge */
+    }
+     .hero-container .contacts {
+        width: 40px; /* Adjust this value to your preferred size */
+        height: 50px; /* Adjust this value to match the width */
+        margin-bottom: 15px; /* Add some spacing between icons */
+        fill: #ffffff; /* Ensure the icon color remains white */
+        transition: transform 0.3s ease; /* Add a smooth hover effect */
+    }
+    
+    .contacts:hover {
+        transform: scale(1.1); /* Slightly increase the size on hover */
+    }
+    
+
+    .social-icons a img {
+        width: 40px; /* Adjust the size of the icons */
+        height: 40px;
+        border-radius: 50%; /* Circle shape */
+        border: 2px solid #fff; /* White border */
+        transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+    
+    .social-icons a img:hover {
+        transform: scale(1.2); /* Scale on hover */
+    }
+    
+    .hero-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: center;
+        padding: 20px;
+    }
+    
     
 
 
