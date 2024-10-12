@@ -12,7 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
-const navItems = ['Skills', 'Education', 'Projects', 'Contact Me'];
+const navItems = ['Skills', 'Projects', 'Education', 'Contact Me'];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
