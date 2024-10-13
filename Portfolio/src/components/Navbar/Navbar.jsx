@@ -11,11 +11,15 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import { ThemeContext } from '../../App'; // Import the ThemeContext
 
 const navItems = ['Skills', 'Projects', 'Education', 'Contact Me'];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  // Access theme and toggleTheme from ThemeContext
+  const { theme, toggleTheme } = React.useContext(ThemeContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -51,6 +55,24 @@ function Navbar() {
             </ListItemButton>
           </ListItem>
         ))}
+        {/* Light/Dark Mode Toggle in the Drawer */}
+        <ListItem>
+          <Button
+            onClick={toggleTheme}
+            sx={{
+              color: theme === 'light' ? '#000' : '#fff', // Change text color based on theme
+              backgroundColor: theme === 'light' ? '#f0f0f0' : '#333', // Change background color
+              width: '100%',
+              textAlign: 'center',
+              marginTop: '10px',
+              '&:hover': {
+                backgroundColor: theme === 'light' ? '#e0e0e0' : '#444', // Change hover color
+              },
+            }}
+          >
+            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+          </Button>
+        </ListItem>
       </List>
     </Box>
   );
@@ -89,6 +111,22 @@ function Navbar() {
               </Button>
             ))}
           </Box>
+
+          {/* Light/Dark Mode Toggle Button in Desktop View */}
+          <Button
+            onClick={toggleTheme}
+            sx={{
+              color: theme === 'light' ? '#000' : '#fff', // Change text color based on theme
+              backgroundColor: theme === 'light' ? '#f0f0f0' : '#333', // Change background color
+              marginLeft: '10px',
+              '&:hover': {
+                backgroundColor: theme === 'light' ? '#e0e0e0' : '#444', // Change hover color
+              },
+            }}
+          >
+            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+          </Button>
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
