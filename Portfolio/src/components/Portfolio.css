@@ -1,3 +1,63 @@
+/* :root {
+    --background-color: #181818;
+    --text-color: #ffffff;
+    --navbar-bg: rgba(29, 20, 60, 0.8);
+    --button-bg: #333;
+    --button-text-color: #fff;
+    --link-color: #fff;
+  }
+  
+  [data-theme="light"] {
+    background: radial-gradient(circle at 64% 27%, #d3c4e7, #c2e4d8, #ffffff);
+    --text-color: #000000;
+    --navbar-bg: rgba(68, 27, 64, 0.9);
+    --button-bg: #f0f0f0;
+    --button-text-color: #000;
+    --link-color: #000;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  a {
+    color: var(--link-color);
+    transition: color 0.3s ease;
+  }
+  
+  .hero-section p,
+  .skills-section p,
+  .Projects-section p,
+  .education-section p,
+  .contact-section p {
+    color: var(--text-color); 
+    transition: color 
+
+  }
+
+  .navbar {
+    background-color: var(--navbar-bg);
+  }
+  
+  button {
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+
+
+
+ */
+
+
 * {  
     box-sizing: border-box;
     margin: 0;
@@ -15,7 +75,6 @@ body {
     height: 100vh;
     background: radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);
     /* background-image: linear-gradient(to top, #07090b 0%, #142332 100%); */
-    /* background: radial-gradient(circle at 64% 17%,#dadaff, #e2f8ea, #ffffff); */
     background-size: cover;
     background-attachment: fixed;
 
@@ -35,9 +94,10 @@ body {
     align-items:left;
     flex-direction: column;
     padding: 0 4vw 5vh;
-    margin-top: 80px;
+    margin-top: 20px;
     
 }
+
 
 .hero-section h1 {
     font-size: 60px;
@@ -72,24 +132,31 @@ body {
     text-align: left;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Ensure content is aligned to the left */
+    width: 100%; /* Ensure the container takes up the full width */
+}
+
+
 .resume-btn {
-    display: flex; /* Keep buttons inline and allow flex properties */
+    display: inline-flex; /* Ensure it behaves like a standard inline button */
     padding: 12px 35px;
     background-color: #0c0b0b;
     color: rgb(212, 214, 215);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline if buttons are links */
+    text-decoration: none;
     font-size: 16px;
-    margin: 30px 0 0;
-    position: relative; /* Important to allow the pseudo-element to work correctly */
+    position: relative;
     transition: all 0.3s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px none 70px 4px; /* Regular shadow */
-    margin: 2em 0 5em;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 10px;
+    margin: 2em 0 5em; /* Keep the margin for vertical spacing */
+    align-self: flex-start; /* Align the button to the left inside a flex container */
 }
 
-.resume-btn::before, .form-button::before {
+.resume-btn::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -101,28 +168,31 @@ body {
     background: linear-gradient(120deg, 
                 #6192ec, #5379b5, 
                 #7fd3ef, #8ac5e5, 
-                #5495c7, #53a1eb); /* Applying gradient to the pseudo-element */
-    filter: blur(6px); /* Blurring the gradient to create a shadow-like effect */
+                #5495c7, #53a1eb);
+    filter: blur(6px);
     opacity: 1;
     transition: all 0.3s ease-in-out;
-    background-color: black;
 }
 
-/* Hover state with more defined colors */
-.resume-btn:hover::before, .form-button:hover::before {
-    transform: scale(1.1); /* Slightly scale up the gradient to spread it out more */
-    background-color: black;
+.resume-btn:hover::before {
+    transform: scale(1.1);
 }
+
+.resume-btn:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 6px 15px;
+}
+
   .gap {
     display: flex;
     gap: 40px;
     width: 100%;
-    height: 6rem;
+    height: 4.5rem;
   }
 
   .social-icons {
     position:relative;
-    top: 45rem; /* Center vertically */
+    top: 39rem; /* Center vertically */
     transform: translateY(-50%);
     display: flex;
     flex-direction: row;
@@ -425,7 +495,7 @@ form input {
 
     .social-icons {
         position:relative;
-        top: 47rem; /* Center vertically */
+        top: 44rem; /* Center vertically */
         transform: translateY(-50%);
         display: flex;
         flex-direction: row;
@@ -749,3 +819,5 @@ form input {
 
 
 }
+
+

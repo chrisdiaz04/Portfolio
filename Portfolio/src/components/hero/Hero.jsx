@@ -75,7 +75,7 @@ function Hero() {
 
             </div>
 
-            <div className="hero-section">
+            <div id="light" className="hero-section">
                 <img className="chris-img" src={Image} alt="Profile image of Me" />
                 <h1>Chris Diaz</h1>
 
@@ -97,11 +97,12 @@ function Hero() {
                         becoming a full-stack developer.
                     </p>     
                 </div>
-                <div>
-                    <button onClick="location.href='assets/ChrisDiaz.pdf'" className="resume-btn">
-                        Resume
-                    </button>
-                </div>
+                <div className="button-container">
+  <a href="/ChrisDiaz.pdf" download="ChrisDiaz.pdf" className="resume-btn">
+    Resume
+  </a>
+</div>
+
             </div>
 
             {/* Dynamically hide or show the arrow */}
