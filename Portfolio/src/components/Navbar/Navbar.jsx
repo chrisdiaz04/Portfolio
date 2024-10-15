@@ -89,12 +89,12 @@ function Navbar() {
           boxShadow: 'none',
           width: '100%', // Makes sure it covers the full width of the screen
           top: 0, // Ensures it stays at the top of the viewport
-          zIndex: (theme) => theme.zIndex.appBar + 1, // Makes sure it stays above other components
+          zIndex: 1201, // Static zIndex value
         }}
       >
         <Toolbar>
           <Typography
-            variant="p"
+            variant="body1" // Fixed the invalid variant
             component="div"
             sx={{ color: '#fff', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
@@ -113,7 +113,7 @@ function Navbar() {
           </Box>
 
           {/* Light/Dark Mode Toggle Button in Desktop View */}
-          <Button
+          {/* <Button
             onClick={toggleTheme}
             sx={{
               color: theme === 'light' ? '#000' : '#fff', // Change text color based on theme
@@ -125,7 +125,7 @@ function Navbar() {
             }}
           >
             {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-          </Button>
+          </Button> */}
 
           <IconButton
             color="inherit"

@@ -8,7 +8,7 @@
   }
   
   [data-theme="light"] {
-    background: radial-gradient(circle at 64% 27%, #d3c4e7, #c2e4d8, #ffffff);
+    background: radial-gradient(circle at 64% 27%, #e8e7ff5c ,#9694bf12, #74ad860f, #f6f6f606, #dddddd28);
     --text-color: #000000;
     --navbar-bg: rgba(68, 27, 64, 0.9);
     --button-bg: #f0f0f0;
@@ -22,21 +22,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  a {
-    color: var(--link-color);
-    transition: color 0.3s ease;
-  }
-  
-  .hero-section p,
-  .skills-section p,
-  .Projects-section p,
-  .education-section p,
-  .contact-section p {
-    color: var(--text-color); 
-    transition: color 
-
-  }
-
   .navbar {
     background-color: var(--navbar-bg);
   }
@@ -47,15 +32,14 @@
     border: none;
     cursor: pointer;
     padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   button:hover {
     opacity: 0.9;
   }
+   */
 
-
-
- */
 
 
 * {  
@@ -74,7 +58,6 @@ html,body {
 body {
     height: 100vh;
     background: radial-gradient(circle at 64% 27%,#261b40, #142332, #07090b);
-    /* background-image: linear-gradient(to top, #07090b 0%, #142332 100%); */
     background-size: cover;
     background-attachment: fixed;
 
