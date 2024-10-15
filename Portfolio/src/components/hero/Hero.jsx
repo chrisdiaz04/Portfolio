@@ -99,7 +99,7 @@ function Hero() {
                 </div>
                 <div className="button-container">
   <a href="/ChrisDiaz.pdf" download="ChrisDiaz.pdf" className="resume-btn">
-    Resume
+    Résumé
   </a>
 </div>
 
